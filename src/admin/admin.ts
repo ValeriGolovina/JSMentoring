@@ -1,0 +1,1 @@
+const adminName: string = 'Valeri'
