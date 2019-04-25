@@ -1,33 +1,30 @@
+const path = require('path');
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
-  
+    output: {
+        filename: '[name]/[name].[hash].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
   module: {
     rules: [
      {
         test: /\.scss$/,
            use: ExtractTextPlugin.extract({
            fallback: 'style-loader',
-           use: ['css-loader', 'sass-loader']
+           use: ['css-loader','postcss-loader','sass-loader']
          })
      }
     ]
    },
    plugins: [
-     new ExtractTextPlugin('style.css'),
-    new HtmlWebpackPlugin({
-      filename: 'admin/admin.html',
-      chunks: ['admin']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'user/user.html',
-      chunks: ['user']
-    })
+        new ExtractTextPlugin('style.css'),
+
    ],
    optimization: {
    runtimeChunk: 'single',
@@ -35,7 +32,7 @@ module.exports = merge(common, {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
+          name: 'common',
           chunks: 'all'
         }
       }

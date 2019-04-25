@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],[,,function(n,e,o){"use strict";o.r(e);o(3);const t=document.createElement("div");t.innerHTML='<p class="greeting">Hello Webpack. I am common file. \nGo to the ../user/user.html or to ../admin/admin.html</p>',document.body.appendChild(t)},function(n,e){}]]);

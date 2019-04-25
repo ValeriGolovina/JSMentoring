@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],[function(n,e,o){"use strict";o.r(e);o(3);const c=document.createElement("div");c.innerHTML='<p class="greeting">Hello user Vasya.</p>',document.body.appendChild(c)},,,function(n,e){}],[[0,1,0]]]);

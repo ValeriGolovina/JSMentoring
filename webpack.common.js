@@ -6,13 +6,15 @@ module.exports = {
   entry: {
     user: './src/user/user.js',
     admin: './src/admin/admin.js',
-  },
-  output: {
-    filename: '[name]/[name].[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+      common: './src/index.js'
   },
   module: {
     rules: [
+        {   enforce: "pre",
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "eslint-loader"
+        },
         {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -33,7 +35,17 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'My perfect app'
+      title: 'My perfect app',
+        filename: 'index.html',
+        chunks: ['common']
     }),
+      new HtmlWebpackPlugin({
+          filename: 'admin/admin.html',
+          chunks: ['admin']
+      }),
+      new HtmlWebpackPlugin({
+          filename: 'user/user.html',
+          chunks: ['user']
+      })
   ]
 }
