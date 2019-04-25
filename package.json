@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "develop": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "lint" : "eslint ./src --fix"
   },
   "keywords": [],
   "author": "",
@@ -14,12 +15,18 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-typescript": "^7.3.3",
+    "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
+    "eslint-loader": "^2.1.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "install": "^0.12.2",
     "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.4.3",
