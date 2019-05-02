@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "lint" : "eslint ./src --fix"
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "npm run lint && webpack --config webpack.prod.js",
+    "lint": "eslint ./src --fix"
   },
   "keywords": [],
   "author": "",
@@ -35,5 +35,8 @@
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "@types/webpack": "^4.4.27"
   }
 }

@@ -1,1 +1,1 @@
-export const adminName: string = 'Valeri'
+export const adminName: string = 'Valeri';
